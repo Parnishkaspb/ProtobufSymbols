@@ -8,8 +8,7 @@ import (
 
 func main() {
 	if len(os.Args) != 2 {
-		fmt.Fprintf(os.Stderr, "Ошибка: вы должны предоставить ровно один файл в качестве аргумента, вы предоставили %d\n", len(os.Args)-1)
-		os.Exit(1)
+		panic(fmt.Sprintf("Ошибка: вы должны предоставить ровно один файл в качестве аргумента, вы предоставили %d\n", len(os.Args)-1))
 	}
 
 	path := os.Args[1]
