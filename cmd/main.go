@@ -8,7 +8,12 @@ import (
 
 func main() {
 	if len(os.Args) < 2 {
-		fmt.Println("Второй аргумент пустой, пожалуйста, передайте его")
+		_ = fmt.Errorf("Ошибка! Аргумент не передан")
+		return
+	}
+
+	if len(os.Args) != 2 {
+		_ = fmt.Errorf("Ошибка! Аргумент должен быть 1")
 		return
 	}
 
@@ -16,7 +21,7 @@ func main() {
 
 	proto, err := os.ReadFile(path)
 	if err != nil {
-		fmt.Printf("Ошибка чтения файла: %v\n", err)
+		_ = fmt.Errorf("Ошибка чтения файла: %v\n", err)
 		return
 	}
 

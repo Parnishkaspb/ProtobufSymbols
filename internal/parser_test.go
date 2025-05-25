@@ -5,6 +5,7 @@ import (
 )
 
 func TestParseProto(t *testing.T) {
+	t.Parallel()
 	tests := []struct {
 		name     string
 		input    string
@@ -60,6 +61,41 @@ func TestParseProto(t *testing.T) {
 					Line:     1,
 					StartPos: 9,
 					EndPos:   14,
+				},
+			},
+		},
+		{
+			name: "service, rpc and enum",
+			input: `service Example {
+			  rpc ExampleRPC(ExampleRPCRequest) returns (ExampleRPCResponse) {};
+			}
+			
+			enum ExampleEnum {
+			  ONE = 0;
+			  TWO = 1;
+			  THREE = 2;
+			}`,
+			expected: []Pattern{
+				{
+					Name:     "Example",
+					Type:     "service",
+					Line:     1,
+					StartPos: 9,
+					EndPos:   16,
+				},
+				{
+					Name:     "ExampleRPC",
+					Type:     "method",
+					Line:     2,
+					StartPos: 7,
+					EndPos:   17,
+				},
+				{
+					Name:     "ExampleEnum",
+					Type:     "enum",
+					Line:     5,
+					StartPos: 6,
+					EndPos:   17,
 				},
 			},
 		},
@@ -138,10 +174,11 @@ func TestParseProto(t *testing.T) {
 		},
 	}
 
-	parser := &Parser{}
-
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
+			t.Parallel()
+			parser := &Parser{}
+
 			result := parser.ParseProto(tt.input)
 
 			if len(result) != len(tt.expected) {

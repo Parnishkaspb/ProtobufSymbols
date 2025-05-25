@@ -33,9 +33,11 @@ func (p *Parser) ParseProto(content string) []Pattern {
 		"message": "message",
 	}
 
-	var blockStack []block
+	var (
+		blockStack []block
+		patterns   []Pattern
+	)
 
-	var patterns []Pattern
 	scanner := bufio.NewScanner(strings.NewReader(content))
 	lineNum := 0
 
@@ -92,7 +94,7 @@ func (p *Parser) ParseProto(content string) []Pattern {
 				Type:     "method",
 				Line:     lineNum,
 				StartPos: startIdx + 1,
-				EndPos:   startIdx + len(name),
+				EndPos:   startIdx + len(name) + 1,
 			})
 			continue
 		}
