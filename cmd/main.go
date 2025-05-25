@@ -8,15 +8,14 @@ import (
 
 func main() {
 	if len(os.Args) != 2 {
-		panic(fmt.Sprintf("Ошибка: вы должны предоставить ровно один файл в качестве аргумента, вы предоставили %d\n", len(os.Args)-1))
+		panic(fmt.Sprintf("Ошибка! Вы должны предоставить ровно один файл в качестве аргумента, вы предоставили %d\n", len(os.Args)-1))
 	}
 
 	path := os.Args[1]
 
 	proto, err := os.ReadFile(path)
 	if err != nil {
-		_ = fmt.Errorf("Ошибка чтения файла: %v\n", err)
-		return
+		panic(fmt.Sprintf("Ошибка чтения файла: %v\n", err))
 	}
 
 	var parser internal.Parse = &internal.Parser{}
