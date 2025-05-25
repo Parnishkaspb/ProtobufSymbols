@@ -7,14 +7,9 @@ import (
 )
 
 func main() {
-	if len(os.Args) < 2 {
-		_ = fmt.Errorf("Ошибка! Аргумент не передан")
-		return
-	}
-
 	if len(os.Args) != 2 {
-		_ = fmt.Errorf("Ошибка! Аргумент должен быть 1")
-		return
+		fmt.Fprintf(os.Stderr, "Ошибка: вы должны предоставить ровно один файл в качестве аргумента, вы предоставили %d\n", len(os.Args)-1)
+		os.Exit(1)
 	}
 
 	path := os.Args[1]
