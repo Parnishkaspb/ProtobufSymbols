@@ -27,3 +27,12 @@ make build-linux    # для Linux
 ```bash
 make build-windows  # для Windows
 ```
+
+#### `make test_files` 
+
+Собирает тулзу под текущую ОС, затем запускает её на всех .proto-файлах в папке mydir/.
+
+```bash
+make test_files
+```
+
