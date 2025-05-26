@@ -45,8 +45,7 @@ ExampleRPCRequest message 19:9-26
 ExampleRPCResponse message 26:9-27
 
 
-#### Возможности
-	•	Поддержка:
+#### Поддержка:
 	•	import
 	•	service
 	•	rpc → method
