@@ -43,3 +43,13 @@ ExampleRPC method 10:7-16
 ExampleEnum enum 13:6-17
 ExampleRPCRequest message 19:9-26
 ExampleRPCResponse message 26:9-27
+
+
+#### Возможности
+	•	Поддержка:
+	•	import
+	•	service
+	•	rpc → method
+	•	enum
+	•	message
+Пропускает вложенные message, enum, oneof
