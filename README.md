@@ -20,6 +20,10 @@
 
 ```bash
 make build-darwin   # для macOS
+```
+```bash
 make build-linux    # для Linux
+```
+```bash
 make build-windows  # для Windows
 ```
