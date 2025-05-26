@@ -28,7 +28,7 @@ make build-linux    # для Linux
 make build-windows  # для Windows
 ```
 
-#### `make test_files` 
+##### `make test_files` 
 
 Собирает тулзу под текущую ОС, затем запускает её на всех .proto-файлах в папке mydir/.
 
@@ -45,10 +45,12 @@ ExampleRPCRequest message 19:9-26
 ExampleRPCResponse message 26:9-27
 
 
-#### Поддержка:
+###### Поддержка:
 	•	import
 	•	service
 	•	rpc → method
 	•	enum
 	•	message
 Пропускает вложенные message, enum, oneof
+
+####### Структура проекта
