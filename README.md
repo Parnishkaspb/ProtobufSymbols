@@ -19,5 +19,7 @@
 - `bin/protosym.exe` — Windows (amd64)
 
 ```bash
-make build
+make build-darwin   # для macOS
+make build-linux    # для Linux
+make build-windows  # для Windows
 ```
