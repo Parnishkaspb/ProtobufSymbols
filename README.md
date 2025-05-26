@@ -56,9 +56,9 @@ ExampleRPCResponse message 26:9-27
 #### Структура проекта
 
 .
-├── cmd/               # main.go
-├── internal/          # реализация Parser
-├── mydir/             # тестовые .proto-файлы
-├── bin/               # готовые бинарники
-├── Makefile
-├── README.md
+.├── cmd/               # main.go
+.├── internal/          # реализация Parser
+.├── mydir/             # тестовые .proto-файлы
+.├── bin/               # готовые бинарники
+.├── Makefile
+.├── README.md
