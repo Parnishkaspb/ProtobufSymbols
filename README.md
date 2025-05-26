@@ -37,12 +37,15 @@ make test_files
 ```
 
 Пример вывода: 
+<pre>
 → mydir/example.proto
 Example service 9:9-16
 ExampleRPC method 10:7-16
 ExampleEnum enum 13:6-17
 ExampleRPCRequest message 19:9-26
-ExampleRPCResponse message 26:9-27
+ExampleRPCResponse message 26:9-27                 
+</pre>
+
 
 
 #### Поддержка:
