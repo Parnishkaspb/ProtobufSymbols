@@ -63,18 +63,21 @@ ExampleRPCResponse message 26:9-27
 .├── Makefile
 .├── README.md
 
-protobufsymbol/              # Корневая директория проекта
-├── cmd/                     # Входная точка (main.go)
+<pre>
+## 🗂 Структура проекта
+
+protobufsymbol/                   # Корневая директория проекта
+├── cmd/                          # Входная точка (main.go)
 │   └── main.go
-├── internal/                # Логика парсинга .proto-файлов
+├── internal/                     # Логика парсинга .proto-файлов
 │   └── parser.go
-├── mydir/                   # Примеры .proto-файлов для тестов
+├── mydir/                        # Примеры .proto-файлов для тестов
 │   ├── example.proto
-│   ├── file1.proto
-│   └── ...
-├── bin/                     # Скомпилированные бинарники (по make build)
-│   ├── protosym             # macOS
-│   ├── protosym-linux       # Linux
-│   └── protosym.exe         # Windows
-├── Makefile                 # Скрипты сборки и тестов
-└── README.md                # Документация проекта
+│   └── file1.proto
+├── bin/                          # Скомпилированные бинарники (после make build)
+│   ├── protosym                  # macOS
+│   ├── protosym-linux            # Linux
+│   └── protosym.exe              # Windows
+├── Makefile                      # Скрипты сборки и тестирования
+└── README.md                     # Документация проекта
+</pre>
